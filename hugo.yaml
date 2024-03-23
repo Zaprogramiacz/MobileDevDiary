@@ -1,3 +1,83 @@
-baseURL: https://example.org/
-languageCode: en-us
-title: My New Hugo Site
+baseURL: https://github.com/Zaprogramiacz/MobileDevDiary
+title: Mobile Dev Diary
+theme: PaperMod
+paginate: 5
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production
+  description: "The website of Maciej Gomolka on mobile applications development"
+  author: Maciej Gomolka
+  ShowShareButtons: false
+  ShowReadingTime: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  comments: false
+  
+  assets:
+    disableHLJS: true
+    favicon: 'favicon.ico'
+    favicon16x16: 'favicon-16x16.png'
+    favicon32x32: 'favicon-32x32.png'
+    apple_touch_icon: 'apple-touch-icon.png'
+
+  socialIcons:
+    - name: linkedin
+      url: 'https://www.linkedin.com/in/maciej-gomolka/'
+    - name: x
+      url: 'https://twitter.com/gomolka_maciej'
+    - name: github
+      url: 'https://github.com/Zaprogramiacz'
+    - name: mastodon
+      url: 'https://mastodon.social/@gomolka'
+    - name: email
+      url: 'mailto:maciej.gomolka@protonmail.com'
+
+  homeInfoParams:
+    Title: 'Hello there 👋🏻'
+    Content: |
+      Welcome to my blog about mobile applications development (mainly for Apple platforms).
+
+      ➡️ Expect to read here about automated tests (unit, snapshot, UI), FRP, SwiftUI and many other topics that will improve your day to day coding. 🧑‍💻
+      
+      ➡️ I'm here not only to share, but also to learn. If you have any suggestion how I can improve my writting, feel free to reach me! 🤙 
+
+      ➡️ My name is **Maciej** and I'm going to be your guide through the world of mobile applications development. 🚀
+
+      📚 Enjoy the reading! 📚
+
+menu:
+  main:
+    - name: Search
+      url: search/
+      weight: 1
+    - name: Archive
+      url: archives/
+      weight: 2
+    - identifier: tags
+      name: Tags
+      url: tags/
+      weight: 4
+    - identifier: about
+      name: About
+      url: about/
+      weight: 5
