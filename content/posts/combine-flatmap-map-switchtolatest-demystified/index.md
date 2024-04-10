@@ -153,7 +153,7 @@ getThreadsIDs() // 1
 - // 2 - mapping ID (`String`) to a request model
 - // 3 - each request is converted into a new publisher that represents API request
 - // 4 - `flatMap` does not ignore errors! In that case `catch` operator intercepts an error, and replaces it with `Empty` publisher. Empty publisher does not emit any error or element into downstream, but completes the stream. In case we don't handle errors, the main stream would be completed with error and no more events would be observed
-- // 6 - `sink` operator that attaches subscriber to the stream and observe elements in the main stream. In our case we save fetched thread details into local cache
+- // 5 - `sink` operator that attaches subscriber to the stream and observe elements in the main stream. In our case we save fetched thread details into local cache
 
 ### map + switchToLatest
 
