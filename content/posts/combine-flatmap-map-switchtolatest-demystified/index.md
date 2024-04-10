@@ -267,9 +267,6 @@ Using `map + switchToLatest` may help you with reducing API operations when the 
 - `flatMap`, `map + switchToLatest` do not ignore errors. In case any publisher fails it'll end the mainstream and no more events will be published. To make sure it does not happen to you, remember about error handling.
 - When a stream is cancelled no more events will be published (including completion).
 
-## Resources
-If you want to play with the operators on your own, I check out [this Swift playground](posts/combine-flatmap-map-switchtolatest-demystifed/images/CombineOperators) with some code examples. Enjoy. ☺️
-
 ---
 
 Thanks for reading the first post on my blog. 📖
