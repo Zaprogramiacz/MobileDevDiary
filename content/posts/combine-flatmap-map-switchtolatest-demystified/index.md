@@ -1,6 +1,6 @@
 ---
 title: 'Combine: flatMap, map + switchToLatests (flatMapLatest) demystified'
-date: 2024-03-05
+date: 2024-04-11
 tags: ['Swift', 'Combine', 'Functional Reactive Programming']
 cover: 
   image: 'posts/combine-flatmap-map-switchtolatest-demystified/images/cover.png'
