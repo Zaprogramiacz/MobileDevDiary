@@ -1,25 +1,35 @@
 ---
-title: 'Testing SwiftUI code - UI'
+title: 'Testing SwiftUI Code - The beginning'
 date: 2024-05-13
-tags: ['Swift', 'SwiftUI', 'Unit testing', 'Snapshot testing', 'SnapshotTesting', 'TDD']
+tags: ['Swift', 'SwiftUI', 'Snapshot testing', 'SnapshotTesting']
 ---
 
 ## Intro
 
-- wiele razy no social mediach widziałem komentarze na temat testowalności (a właściwie braku testowalności) kodu napisanego w SwiftUI. Wiedziałem o istnieniu narzędzi tworzonych przez open source community i chciałem się przekonać jak to jest z tą testowalnością
-- obecnie na codzień zajmuje się aplikacją która nie używa SwiftUI i chciałbym nadrobić zaległości w SwiftUI a zwłaszcza w toolingu do testów tworzonego przez community
-- aby nie tworzyć długiego posta którego postanwoiłem podzielić go na conajmniej 2 części. W pierwszej części przedstawię requirementsy i zajmę się zaimplementowaniem części UI, a w drugiej części logiki biznesowej
-- co użyjemy SwiftUI, async await, jeżeli chodzi o architekturę to nie będziemy się początkowo na tym skupiać ale po napisaniu testów spróbujemy zrobić refaktor i wpraowdzić jakiś prosty Redux żeby sprawdzić czy nasze testy pomogą nam podczas refaktoru
-- testy mają nam pomóc i umożliwiać łatwy refaktor
+Hello everyone and welcome to my first (ever) blog series!
+
+Today I'm going to begin experimenting with SwiftUI. The mission is to build a small application and having it fully tested 💯. I decided to go for that quest to broaden my knowledge around SwiftUI and verify the rumors that it cannot be tested.
+
+To keep it relatively readable I decided to split it up and we're going to see how many parts we end up with.
+
+What I planned so far:
+- defining the requirements
+- writing tests and implementation of UI
+- writing tests and implementation (in TDD) of business logic
+- ... and something more, maybe try to re-shape the app to follow Redux architecture 🤔
+
+Let's get this journey started and move to the crème de la crème of the blog post! 
 
 ## Chapter I - Requirements
 
-Let's describe our requirements that we'll be implementing.
+We're going to start from the very beginning - describing requirements that we'll be implemented.
+
+{ opisać ogólnie co budujemy }
 
 ### Business logic
 
 #### As a user I can see a joke
-- a joke is displayed in a format
+- a joke is displayed in the following format:
 ```
 setup
 ⤵️
@@ -36,15 +46,17 @@ Do you know the problem with UDP jokes?
 - over the text there is a header in a form of the image that is centered
 
 #### As a user I can get a new joke
-- when the button "Tell me another!" is tapped, the API request fetching a new random joke is triggered
-- during the request we replace a joke with loading indication text - "Making up a joke 🤭"
-- when the request succeeds we display a new joke in a place of loading indication text ("Making up a joke 🤭")
-- when the request fails we replace a joke with the text - "I couldn't come up with a good joke. Can I get another try? 🤔"
+- when you tap the button "Tell me another!", the API request fetching a new random joke is triggered { check formatting }
+- during the request a joke is replaced with loading indication text - "Making up a joke 🤭"
+- when the request is successful a new joke in a place of loading indication text is displayed ("Making up a joke 🤭")
+- when the request fails a joke is replaced with the following text - "I couldn't come up with a good joke. Can I get another try? 🤔"
 
 ### Design
-(Please don't judge me design skills 😅)
+(Please don't judge me design skills 😅) 
 
 ![joke_app_designs](images/joke_app_designs.png)
+
+As we already agreed that I'm not an expert in desing, we won't be focusing on making it pixel perfect. We want to have all the elements look the same like on the design, but spacing can be a bit different, and we're ok with it.
 
 ### API
 For API we're going to use [Official Joke API](https://github.com/15Dkatz/official_joke_api). Where the response format looks ⤵️
@@ -61,15 +73,14 @@ GET https://official-joke-api.appspot.com/random_joke
 ```
 ## Chapter II - UI
 
-Let's start the journey and move to the cream de la cream of that blog post! 
-Będzie dużo obrazków :D
+In that chapter we're going to make snapshots of our views using the SnapshotTesting (https://github.com/pointfreeco/swift-snapshot-testing) library.
 
-- zaczenimy od impelemtacji UI dla 3 stanów które mamy, joke, loading, error
+Based on our requirements we can clearly see that UI has three states: joke (when a joke is displayed), loading and error. We'll be implemeting each of them one by one starting from the snapshot tests, providing the implementation and verifying it by tests (It's the flow that I consider close to TDD). 
 
-Według zasad TDD zaczniemy od napisania testu snapshotowego. Nie będzie to ksiązkowe TDD ale będzie to najbardziej do tego podobne. Opisywałem już kiedyś jak działają testy snapshotowe (tutaj link do mojego blog posta)
+If you don't know how snapshot tests work I suggest reviewing the library docs https://github.com/pointfreeco/swift-snapshot-testing or in one of my blog posts { here will be the link when I move it }.
 
-- dodaje libkę SnapshotTesting do targetu testowego projektu
-- piszę pierwszy test snapshotowy bez dodawania jakiejkolwiek implementacji
+Let's start with the first snapshot test covering state when a joke is displayed ⤵️
+
 ```swift
 func test_JokeView_DisplaysJoke() {
  let joke = Joke(
@@ -81,7 +92,9 @@ func test_JokeView_DisplaysJoke() {
  assertSnapshot(of: controller, as: .image(on: .iPhone13Pro), record: true)
 }
 ```
-- teraz dodam kod żeby projekt się budował
+
+After adding it, the project doesn't compile - it's expected, because we still haven't defined a few components yet. It's the next step ⤵️
+
 ```swift
 struct Joke {
   let setup: String
@@ -100,11 +113,15 @@ struct JokeView: View {
   }
 }
 ```
-i odpalę wcześniej napisany snapshot test. Otrzymamy failure - oczekiwane jesteśmy w record mode i snapshot z cała biała reprezentacją ekranu iPhone 13 Pro z napisanem Hello world na środku. We are ready for our Joke View definition according to the design.
+Now the code compiles and we can run the tests. As a result we should get failure (we're in the record mode) and the reference image with "Hello world" text in the center of the white screen. It's a good first step towards the real implementation.
 
-??? może obrazek tutaj ???
+{ wrzucić tutaj obrazek }
 
-- Będziemy budować nasz widok przy pomocy Preview więc spróbujemy wysherować logikę z naszego testu, żeby uniknać copy-paste (anti-)pattern.
+One of the features introduced together with SwiftUI are previews offering us live reloading when developing views.
+
+In the UIKit I'd double check the reference snapshot after updating the view not to waste time on running simulator all over again, but here we can use previews.
+
+To avoid copy-paste anti-pattern, we'll extract the view setup from the snapshot tests to the shared component ⤵️
 
 ```swift
 enum JokeViewPreviewProvider {
@@ -122,30 +139,35 @@ enum JokeViewPreviewProvider {
 
 }
 ```
-a potem zmienimy nasz test na:
+
+after extraction we refactor the test to the form ⤵️
+
 ```swift
 func test_JokeView_DisplaysJoke() {
  let controller = UIHostingController(rootView: JokeViewPreviewProvider.jokeView)
  assertSnapshot(of: controller, as: .image(on: .iPhone13Pro), record: true)
 }
 ```
-dzięki temu reużywamy tego samego widoku przy preview i tesście snapshotowym
 
-więc dodajemy preview
+Before starting real UI implementation we can setup the preview ⤵️
+
 ```swift
 #Preview {
   JokeViewPreviewProvider.jokeView
 }
 ```
-- kolejny krok jest prosty - zainmepemtujemy nasz ekran w stanie kiedy wyświetalmy joke
-Jeżeli robiłbym to w UIKit to napisałbym test snapshotowy i sprawdzał rezultat po każdorazowej zmianie widoku ale, że SwiftUI oferuje nam live reloading - użyję previews, na końcu nagram snapshot, sprawdzę jego poprawność i zapiszę jako obrazek referencyjny.
-Running the simulator and the screen verification is the very last step of my UI implementation
 
-- Nagrywam reference image i okazuje się że zaokrąglenie się źle renderuje
+and finally focus on the view implementation.
+
+When it's ready we can re-record the reference image and check if the view renders correctly.
+
+Having a closer look at the reference image you can notice that something is wrong with the corners of the button 🤔
 
 ![joke_view_joke_not_in_key_window](images/joke_view_joke_not_in_key_window.png)
 
-Trzeba zrobić record in key window bo ... którkie wytłumaczenie. Napiszę kiedyś o tym kolejnego posta
+{ tutaj krótki wytłumaczenie dlaczego Trzeba zrobić record in key window bo ... którkie wytłumaczenie. Napiszę kiedyś o tym kolejnego posta }
+
+As described above, we have to use the snapshotting strategy that renders snapshot in a key window ⤵️
 
 ```swift
 assertSnapshot(
@@ -155,12 +177,16 @@ assertSnapshot(
 )
 ```
 
+When we check the reference image now it displays correctly ⤵️
+
 ![joke_view_with_joke](images/joke_view_with_joke.png)
 
-usuwamy z naszej funckji assertSnapshot argument `record: true` i nasz test powinnien być teraz zielony. Dla sprawdzenia czy test rzeczywiście coś weryfikuje możemy dokonać jakiejś zmiany w widoku np. zmienić kolor backgroundu buttona na .red i odpalić test jeszcze raz - powinniśmy dostać failure a po ponownej zmianie do wersji pierwotnej - success.
+and if everything is perfect 👌🏻, remove `record: true` from the `assertSnapshot` function, re-run the tests, and check the result ✅
 
-- teraz commit i jedziemy dalej! Mamy jeszcze 2 stany UI - loading i error
-- zacznijmy od napisania testu. Musimy w jakiś sposób zmienić nasz model aby mieć możliwość wyświetlenia inncyh stanów
+To review if test works correctly, make any change in the view e.g change the color of the button background to `.red` and run the test. It should fail ❌. Revert the failing changes to make it green again, commit and let's move on 👏🏻
+
+The next state that has to be handled is loading. Just like before, start by wrting a test ⤵️
+
 ```swift
 func test_JokeView_LoadingJoke() {
   let controller = UIHostingController(rootView: JokeViewPreviewProvider.jokeLoading)
@@ -171,15 +197,18 @@ func test_JokeView_LoadingJoke() {
   )
 }
 ```
-the code does not compile, so we are in the red stage, let's make it compile first
 
-let's introduce the struct `JokeState` with 2 cases and let's inject it to the JokeView isntead of `Joke`
+The code does not compile, so we are in the red stage, so let's make it compile first.
+
+First, introduce the struct `JokeState` with two cases and inject it to the `JokeView` instead of `Joke` ⤵️
+
 ```swift
 enum JokeState {
   case loading
   case loaded(joke: Joke)
 }
 ```
+
 ```swift
 struct JokeView: View {
   let state: JokeState
@@ -191,6 +220,9 @@ struct JokeView: View {
   ...
 }
 ```
+
+then, define loading view in preview providers ⤵️
+
 ```swift
 enum JokeViewPreviewProvider {
 
@@ -208,7 +240,9 @@ enum JokeViewPreviewProvider {
 
 }
 ```
-i zmieniamy body
+
+and handle new state in the view's body, by inserting `EmptyView` there ⤵️
+
 ```swift
 var body: some View {
   VStack {
@@ -242,25 +276,28 @@ var body: some View {
 }
 ```
 
-teraz test powienien się już komilować, więc sprawdźmy jaki snapshot nagramy. Kod się kompiluje i dostajemy failure - oczewkiane mamy argument record: true. Otrzymujemy snapshot bez tekstu co jest również oczekwiane ponieważ
-dla stanu loading wstawiamy EmptyView
+We reached the stage where the test compiles, so we can now run the test. The output is expected - failure ❌, because the record mode is turned on. The recorded reference image doesn't have any text what's expected, because loading state is modeled by `EmptyView`.
 
 ![joke_view_loading_initial_state](images/joke_view_loading_initial_state.png)
 
-Let's replace EmptyView() with the text according to the criteria and trigger the snapshot to re-record again.
+If the test already compiles, we can move on to add the next preview ⤵️
 
-dodajemy preview i robimy zmiany
 ```swift
 #Preview {
   JokeViewPreviewProvider.loadingView
 }
 ```
 
+Now we can implement the loading state handling according to the requirements and trigger the test to re-record the reference image ⤵️
+
 ![joke_view_loading](images/joke_view_loading.png)
 
-snapshot wyglada na poprawny więc commitujemy go jako obrazek referencyjny i wyrzucamy argument `record: true` z testu.
+If the results and requirements are satisfactory, we can disable the record mode (by removing `record: true` from the test) and commit.
 
-Powtórzmy ten sam schemat dla stanu failure. Piszemy test
+The last state is failure. We repeat each step just like for the previous states.
+
+Add test ⤵️
+
 ```swift
 func test_JokeView_LoadingJokeFailure() {
   let controller = UIHostingController(rootView: JokeViewPreviewProvider.jokeLoadingFailure)
@@ -271,7 +308,11 @@ func test_JokeView_LoadingJokeFailure() {
   )
 }
 ```
-dodajemy case
+
+Make the code compile 💻
+
+Failure case in `JokeState` ⤵️
+
 ```swift
 enum JokeState {
   case loading
@@ -279,7 +320,9 @@ enum JokeState {
   case failure
 }
 ```
-robimy zmiany w preview providerze
+
+Changes in the preview provider ⤵️
+
 ```swift
 enum JokeViewPreviewProvider {
 
@@ -298,7 +341,9 @@ enum JokeViewPreviewProvider {
 
 }
 ```
-Obsługujemu case w JokeView dodająca do switcha EmptyView
+
+The new state handling in the view's body ⤵️
+
 ```swift
 var body: some View {
   VStack {
@@ -333,9 +378,10 @@ var body: some View {
   }
 }
 ```
-Puszczamy test i nagrywamy snapshot. Snapshot w pierwszej iteracji wygląda dokłądnie tak jak snapshot w pierwszej iteracji dla loading state.
 
-Dodajemy preview
+Run the test, and record the initial reference image.
+
+Add the preview ⤵️
 
 ```swift
 #Preview {
@@ -343,7 +389,7 @@ Dodajemy preview
 }
 ```
 
-Teraz dodajemy implementację żeby obsłużyć ten stan w body widoku
+Implement the state according to the criteria ⤵️
 
 ```swift
 var body: some View {
@@ -379,21 +425,24 @@ var body: some View {
   }
 }
 ```
-po czym odpalam test jeszcze raz, jeżeli snapshot się zgadza, zostawiam snapshot jako referencyjny i usuwam `record: true` z testu. 
+
+Run the test again, check the new reference image ⤵️
 
 ![joke_view_failure](images/joke_view_failure.png)
 
-Po pownowyn uruchomieniu testów powinniśmy mieć powonieśmy mieć 3 zielone checki
+If everything is alright, remove `record: true` from the test, run it again to verify it's ✅ and commit!
 
 ## Summary
 
-In the end our code coverage for JokeView is 98.8%
+The final outcome: the code coverage for JokeView is 98.8%
 ![code_coverage](images/code_coverage.png)
 
-the untested code is the button action.
+the untested code is the button action. { check }
 ![joke_view_code_coverage](images/joke_view_code_coverage.png)
 
-We've covered all UI from the requirements. We have 3 snapshot tests that verify the correctness of the UI. The next step will be even more interesting, we're going to try to implement business logic in TDD!
+All the UI requirements are covered and the code is ready to have business logic implemented. The testing suite consists of three snapshots verifying the correctness of all states.
+
+In the next blog post we're going to unpack even more interesting topic 🫢 - I'm going to try to implement all the business logic in TDD! 💯
 
 ---
 
