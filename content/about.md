@@ -5,7 +5,7 @@ showReadingTime: false
 author: [""]
 ---
 
-{{< figure align=center src="maciej.png" width="70%" >}}
+{{< figure align=center src="maciej.png" alt="Maciej" width="70%" >}}
 
 My adventure with the iOS platform started over **eight years** ago. I belong to a generation of developers who started out learning how to create mobile iOS applications in **Swift**, but I'm also familiar with Objective-C.
 

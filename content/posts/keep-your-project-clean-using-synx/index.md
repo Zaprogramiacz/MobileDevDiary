@@ -5,6 +5,7 @@ tags: ['Tooling']
 ShowToc: false
 cover: 
   image: 'posts/keep-your-project-clean-using-synx/images/cover.png'
+  alt: 'a man created with an emoji who holds a brush in one hand and a toolbox in the other'
 ---
 
 A tool written in Ruby which can keep your project and a .pbxproj file clean. A valuable ally when solving complex conflicts inside the project file.

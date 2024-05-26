@@ -4,6 +4,7 @@ date: 2024-04-11
 tags: ['Swift', 'Combine', 'Functional Reactive Programming']
 cover: 
   image: 'posts/combine-flatmap-map-switchtolatest-demystified/images/cover.png'
+  alt: 'Thinking emoji in the center, on two sides of the emoji, one option under consideration (left: flatMap, right: map + switchToLatests operators)'
 ---
 
 ## Intro
