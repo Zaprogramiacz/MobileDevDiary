@@ -19,8 +19,17 @@ outputs:
 
 params:
   env: production
-  description: "The website of Maciej Gomolka on mobile applications development"
+  description: 'The website of Maciej Gomolka on mobile applications development.'
   author: Maciej Gomolka
+  socialPreview:
+    image: 'mobile-dev-diary.jpg'
+    description: 'The website of Maciej Gomolka on mobile applications development.'
+    title: 'Mobile Dev Diary'
+  opengraph:
+    enable: true
+    title: 'Mobile Dev Diary'
+    description: 'The website of Maciej Gomolka on mobile applications development.'
+    image: 'mobile-dev-diary.jpg'
   ShowShareButtons: false
   ShowReadingTime: true
   displayFullLangName: true
