@@ -1,5 +1,5 @@
 baseURL: https://mobiledevdiary.com/
-title: Mobile Dev Diary
+title: 'Mobile Dev Diary' 
 theme: PaperMod
 paginate: 5
 
@@ -19,7 +19,7 @@ outputs:
 
 params:
   env: production
-  description: 'The website of Maciej Gomolka on mobile applications development.'
+  description: 'Mobile Dev Diary: the place where we can grow the code together. The website of Maciej Gomolka on mobile applications development with a strong focus on crafting the high-quality software.'
   author: Maciej Gomolka
   images: ['mobile-dev-diary.jpg']
   ShowShareButtons: false
