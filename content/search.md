@@ -1,5 +1,5 @@
 ---
-title: "Search"
-placeholder: Search demo site with full text fuzzy search ...
-layout: "search"
+title: 'Search'
+placeholder: Search this blog
+layout: 'search'
 ---
