@@ -80,7 +80,7 @@ In that chapter we're going to make snapshots of our views using the SnapshotTes
 
 Based on our requirements we can clearly see that UI has three states: joke (when a joke is displayed), loading and error. We'll be implemeting each of them one by one starting from the snapshot tests, providing the implementation and verifying it by tests (It's the flow that I consider close to TDD). 
 
-If you don't know how snapshot tests work I suggest reviewing the library docs https://github.com/pointfreeco/swift-snapshot-testing or in one of my blog posts { here will be the link when I move it }.
+If you don't know how snapshot tests work I suggest reviewing the library docs https://github.com/pointfreeco/swift-snapshot-testing or in one of my blog posts ➡️ ["Testing" section](https://www.mobiledevdiary.com/posts/testing-swiftdata-and-the-query-property-wrapper-through-an-example/#testing).
 
 Let's start with the first snapshot test covering state when a joke is displayed ⤵️
 
@@ -440,7 +440,7 @@ If everything is alright, remove `record: true` from the test, run it again to v
 The final outcome: the code coverage for JokeView is 98.8%
 ![code_coverage](images/code_coverage.png)
 
-the untested code is the button action. { check }
+the untested code is the button action.
 ![joke_view_code_coverage](images/joke_view_code_coverage.png)
 
 All the UI requirements are covered and the code is ready to have business logic implemented. The testing suite consists of three snapshots verifying the correctness of all states.
