@@ -25,9 +25,9 @@ Let's get this journey started and move to the crème de la crème of the blog p
 
 ## Chapter I - Requirements
 
-We're going to start from the very beginning - describing requirements that we'll be implemented.
+Our goal will be to build a very simple app that displays jokes fetched from the API.
 
-{ opisać ogólnie co budujemy }
+We're going to start from the very beginning - describing requirements that we'll be implemented.
 
 ### Business logic
 
