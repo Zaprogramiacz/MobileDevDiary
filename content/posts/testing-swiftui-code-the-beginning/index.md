@@ -447,6 +447,8 @@ All the UI requirements are covered and the code is ready to have business logic
 
 In the next blog post we're going to unpack even more interesting topic 🫢 - I'm going to try to implement all the business logic in TDD! 💯
 
+{ link to the repository }
+
 ---
 
 Thanks for reading. 📖
