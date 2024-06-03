@@ -3,7 +3,7 @@ title: 'Testing SwiftUI Code - The beginning'
 date: 2024-05-13
 tags: ['Swift', 'SwiftUI', 'Snapshot testing', 'SnapshotTesting', 'Testing']
 cover: 
-  image: 'posts/testing-swiftui-code-the-beginning/images/cover.png'
+  image: 'images/cover.png'
   alt: 'Post title on the left, a diagram symbolizing the red-green-refactor approach'
 ---
 
