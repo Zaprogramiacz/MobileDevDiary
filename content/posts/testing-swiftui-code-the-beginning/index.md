@@ -168,7 +168,7 @@ Having a closer look at the reference image you can notice that something is wro
 
 ![joke_view_joke_not_in_key_window](images/joke_view_joke_not_in_key_window.png)
 
-{ tutaj krótki wytłumaczenie dlaczego Trzeba zrobić record in key window bo ... którkie wytłumaczenie. Napiszę kiedyś o tym kolejnego posta }
+According to the snapshoting library documentation some components such as `UIPickerView`, `UIAppearance`, `UIVisualEffect` require to be added to the key window to render correctly. If you don't do this your snapshot won't look perfect (like the one above ⬆️).
 
 As described above, we have to use the snapshotting strategy that renders snapshot in a key window ⤵️
 
