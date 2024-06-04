@@ -118,7 +118,7 @@ struct JokeView: View {
 ```
 Now the code compiles and we can run the tests. As a result we should get failure (we're in the record mode) and the reference image with "Hello world" text in the center of the white screen. It's a good first step towards the real implementation.
 
-{ wrzucić tutaj obrazek }
+![joke_view_hello_world](images/joke_view_hello_world.png)
 
 One of the features introduced together with SwiftUI are previews offering us live reloading when developing views.
 
