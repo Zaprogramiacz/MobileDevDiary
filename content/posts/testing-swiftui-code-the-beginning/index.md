@@ -49,7 +49,7 @@ Do you know the problem with UDP jokes?
 - over the text there is a header in a form of the image that is centered
 
 #### As a user I can get a new joke
-- when you tap the button "Tell me another!", the API request fetching a new random joke is triggered { check formatting }
+- when you tap the button "Tell me another!", the API request fetching a new random joke is triggered
 - during the request a joke is replaced with loading indication text - "Making up a joke 🤭"
 - when the request is successful a new joke in a place of loading indication text is displayed ("Making up a joke 🤭")
 - when the request fails a joke is replaced with the following text - "I couldn't come up with a good joke. Can I get another try? 🤔"
