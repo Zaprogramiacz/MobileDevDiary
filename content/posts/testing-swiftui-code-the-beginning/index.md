@@ -1,6 +1,6 @@
 ---
-title: 'Testing SwiftUI Code - The beginning'
-date: 2024-05-13
+title: 'Testing SwiftUI Code - The beginning (UI)'
+date: 2024-06-04
 tags: ['Swift', 'SwiftUI', 'Snapshot testing', 'SnapshotTesting', 'Testing']
 cover: 
   image: 'images/cover.png'
