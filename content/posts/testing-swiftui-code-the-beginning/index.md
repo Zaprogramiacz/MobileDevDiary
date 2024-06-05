@@ -447,7 +447,11 @@ All the UI requirements are covered and the code is ready to have business logic
 
 In the next blog post we're going to unpack even more interesting topic 🫢 - I'm going to try to implement all the business logic in TDD! 💯
 
-{ link to the repository }
+## Resources
+
+- Github repository with the code - https://github.com/Zaprogramiacz/JokesApp
+- Snapshot testing library - https://github.com/pointfreeco/swift-snapshot-testing
+- Joke API - https://github.com/15Dkatz/official_joke_api
 
 ---
 
