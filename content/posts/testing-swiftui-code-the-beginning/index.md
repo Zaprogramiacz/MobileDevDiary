@@ -162,6 +162,42 @@ Before starting real UI implementation we can setup the preview ⤵️
 
 and finally focus on the view implementation.
 
+```swift
+struct JokeView: View {
+  let joke: Joke
+
+  init(joke: Joke) {
+    self.joke = joke
+  }
+
+  var body: some View {
+    VStack {
+      Image("header")
+
+      VStack(alignment: .center) {
+        Text(joke.setup)
+        Text("⤵️")
+        Text(joke.punchline)
+      }.multilineTextAlignment(.center)
+      .frame(height: 180)
+      .padding(.horizontal, 64)
+      .padding(.top, 16)
+
+      Button(action: { print("Button tapped") }) {
+        Text("Tell me another!")
+          .tint(.black)
+          .padding(.vertical, 10)
+      }.frame(maxWidth: .infinity)
+        .background(Color("ButtonBackground"))
+        .clipShape(Capsule())
+        .overlay(Capsule().stroke(style: StrokeStyle(lineWidth: 3)))
+        .padding(.horizontal, 32)
+        .padding(.top, 16)
+    }
+  }
+}
+```
+
 When it's ready we can re-record the reference image and check if the view renders correctly.
 
 Having a closer look at the reference image you can notice that something is wrong with the corners of the button 🤔
@@ -292,6 +328,39 @@ If the test already compiles, we can move on to add the next preview ⤵️
 ```
 
 Now we can implement the loading state handling according to the requirements and trigger the test to re-record the reference image ⤵️
+
+```swift
+var body: some View {
+  VStack {
+    Image("header")
+
+    VStack(alignment: .center) {
+      switch state {
+      case .loading:
+        Text("Making up a joke 🤭")
+      case .loaded(let joke):
+        Text(joke.setup)
+        Text("⤵️")
+        Text(joke.punchline)
+      }
+    }.multilineTextAlignment(.center)
+    .frame(height: 180)
+    .padding(.horizontal, 64)
+    .padding(.top, 16)
+
+    Button(action: { print("Button tapped") }) {
+      Text("Tell me another!")
+        .tint(.black)
+        .padding(.vertical, 10)
+    }.frame(maxWidth: .infinity)
+      .background(Color("ButtonBackground"))
+      .clipShape(Capsule())
+      .overlay(Capsule().stroke(style: StrokeStyle(lineWidth: 3)))
+      .padding(.horizontal, 32)
+      .padding(.top, 16)
+  }
+}
+```
 
 ![joke_view_loading](images/joke_view_loading.png)
 
