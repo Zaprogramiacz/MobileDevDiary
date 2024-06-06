@@ -3,7 +3,7 @@ title: 'Testing SwiftUI Code - The beginning (UI)'
 date: 2024-06-06
 tags: ['Swift', 'SwiftUI', 'Snapshot testing', 'SnapshotTesting', 'Testing']
 cover: 
-  image: 'images/cover.png'
+  image: 'posts/testing-swiftui-code-the-beginning/images/cover.png'
   alt: 'Post title on the left, a diagram symbolizing the red-green-refactor approach'
 ---
 
@@ -11,7 +11,7 @@ cover:
 
 Hello everyone and welcome to my first (ever) blog series!
 
-Today I'm going to begin experimenting with SwiftUI. The mission is to build a small application and having it fully tested 💯. I decided to go for that quest to broaden my knowledge around SwiftUI and verify the rumors that it cannot be tested.
+Today, I'm going to begin experimenting with SwiftUI. The mission is to build a small application and having it fully tested 💯. I decided to go for that quest to broaden my knowledge around SwiftUI and verify the rumors that it cannot be tested.
 
 To keep it relatively readable I decided to split it up and we're going to see how many parts we end up with.
 
@@ -122,7 +122,7 @@ Now the code compiles and we can run the tests. As a result we should get failur
 
 One of the features introduced together with SwiftUI are previews offering us live reloading when developing views.
 
-In the UIKit I'd double check the reference snapshot after updating the view not to waste time on running simulator all over again, but here we can use previews.
+In the UIKit, I'd double check the reference snapshot after updating the view not to waste time on running simulator all over again, but here we can use previews.
 
 To avoid copy-paste anti-pattern, we'll extract the view setup from the snapshot tests to the shared component ⤵️
 
@@ -222,7 +222,7 @@ When we check the reference image now it displays correctly ⤵️
 
 and if everything is perfect 👌🏻, remove `record: true` from the `assertSnapshot` function, re-run the tests, and check the result ✅
 
-To review if test works correctly, make any change in the view e.g change the color of the button background to `.red` and run the test. It should fail ❌. Revert the failing changes to make it green again, commit and let's move on 👏🏻
+To review if test works correctly, make any change in the view, e.g change the color of the button background to `.red` and run the test. It should fail ❌. Revert the failing changes to make it green again, commit and let's move on 👏🏻
 
 The next state that has to be handled is loading. Just like before, start by wrting a test ⤵️
 
@@ -518,9 +518,9 @@ In the next blog post we're going to unpack even more interesting topic 🫢 - I
 
 ## Resources
 
-- Github repository with the code - https://github.com/Zaprogramiacz/JokesApp
-- Snapshot testing library - https://github.com/pointfreeco/swift-snapshot-testing
-- Joke API - https://github.com/15Dkatz/official_joke_api
+- Github repository with the code: https://github.com/Zaprogramiacz/JokesApp
+- Snapshot testing library: https://github.com/pointfreeco/swift-snapshot-testing
+- Joke API: https://github.com/15Dkatz/official_joke_api
 
 ---
 
