@@ -1,7 +1,7 @@
 ---
 title: 'My WWDC 2017 Scholarship submission'
 date: 2024-06-10
-tags: ['WWDC', 'WWDC-2017']
+tags: ['WWDC', 'WWDC-2017', 'Swift Playground', 'unit testing']
 cover: 
   image: 'posts/my-wwdc-2017-scholarship-submission/images/cover.png'
   alt: 'Title in the center surrounded by colorful pixel balls'
