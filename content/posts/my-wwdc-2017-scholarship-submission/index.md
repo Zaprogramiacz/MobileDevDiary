@@ -52,7 +52,7 @@ I'm glad that I could take part in such a great and important event for Swift co
 Before writing the blog post, I updated my submission project - Pixel Balls 👾 to run in Xcode 15.4. You can find it here - https://github.com/Zaprogramiacz/PixelBalls-WWDC2017
 
 ![wwdc_swag](images/wwdc_swag.jpeg)
-![wwdc17](images/wwdc17.jpg)
+![wwdc17](images/wwdc17.jpeg)
 
 ---
 
