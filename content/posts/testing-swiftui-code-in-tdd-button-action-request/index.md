@@ -217,7 +217,7 @@ func fetchNewJoke() {
     string: "https://official-joke-api.appspot.com/random_joke"
   ).unsafelyUnwrapped
   let request = URLRequest(url: url)
-  Task {
+  Task { // 1
     try! await requestExecutor(request, nil)
   }
 }
