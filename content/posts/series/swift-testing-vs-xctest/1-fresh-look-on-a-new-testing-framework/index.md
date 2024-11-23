@@ -5,7 +5,7 @@ tags: ['Swift', 'XCTest', 'Swift Testing', 'unit testing', 'Testing']
 series: "XCTest vs. Swift Testing"
 cover: 
   image: 'images/cover.png'
-  alt: 'XCTest vs. Swift Testing - fresh look on a new testing framework'
+  alt: '#1 XCTest vs. Swift Testing - fresh look on a new testing framework'
 ---
 
 New Series! XCTest vs. Swift Testing - fresh look on a new testing framework.
@@ -24,7 +24,6 @@ In XCTest there are assertions: `XCTAssertEqual`, `XCTAssertTrue`, `XCTAssertNil
 Swift Testing simplifies that with a single macro `#expect`. So now `XCTAssertTrue(1 + 1, 2)`, becomes `#expect(1 + 1 == 2)`.
 
 I’m definitely a fan of the `@Test` macro as this small change makes the testing code cleaner. However I’m not 100% sure about replacing all assertions with one macro. What makes me think it was a good idea - is a simplification and making on single verification function instead of several ones. Maybe more experience with Swift Testing will convince me to have a stronger opinion about it… ?
-
 
 Gif ⤵️
 

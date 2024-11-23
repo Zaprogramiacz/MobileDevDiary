@@ -5,7 +5,7 @@ tags: ['Swift', 'Refactoring']
 series: "Swift code refactor in action"
 cover: 
   image: 'images/cover.png'
-  alt: 'Swift code refactor in action - user profile name'
+  alt: '#1 Swift code refactor in action - user profile name'
 ---
 
 Swift code refactor in action 👨🏻‍💻
@@ -22,7 +22,7 @@ Advice: The easiest and fastest way to validate your refactor is to have the cod
 
 Gif ⤵️
 
-![reference_image_delete](images/refactoring.gif)
+![Refactoring](images/refactoring.gif)
 
 Code ⤵️
 
