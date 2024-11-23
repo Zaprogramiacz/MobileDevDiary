@@ -4,7 +4,7 @@ date: 2024-09-13
 tags: ['Swift', 'SwiftUI', 'TDD', 'ViewInspector', 'unit testing', 'Testing']
 series: "Testing SwiftUI code in TDD"
 cover: 
-  image: 'posts/testing-swiftui-code-in-tdd-button-action-request/images/cover.png'
+  image: 'images/cover.png'
   alt: 'At the top, the title "TDD with SwiftUI - Triggering API Request" and at the bottom, an image of a phone with a red button and a finger pressing that button.'
 ---
 
