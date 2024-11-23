@@ -1,6 +1,6 @@
 ---
 title: '#2 XCTest vs. Swift Testing - Has error testing been simplified?'
-date: 2024-11-14
+date: 2024-11-19
 tags: ['Swift', 'XCTest', 'Swift Testing', 'unit testing', 'Testing']
 series: "XCTest vs. Swift Testing"
 cover: 
