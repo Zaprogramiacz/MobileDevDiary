@@ -12,7 +12,7 @@ Optionals are a core of Swift - we deal with them daily, both in production and 
 
 In XCTest there is `XCTUnwrap` operator.
 
-Swift Testing introduces `#expect` macro.
+Swift Testing introduces `#require` macro.
 
 Is there any difference between them? Not really! Both require the test function to handle exceptions and `try` keyword before.
 
