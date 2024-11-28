@@ -13,7 +13,9 @@ Swift code refactor in action 👨🏻‍💻
 Common scenario: formatting user profile name - I bet any of you faced this kind of task. 
 
 At first glance, it look straightforward, but when you take a closer look, you’ll notice two potential improvements:
-1️⃣ One single return - simplification of the the function flow.
+
+1️⃣ One single return - simplification of the function flow.
+
 2️⃣ Centralised formatting logic - reduces the chance of bugs.
 
 Check out the animated gif and the code where I refactor to address these issues.
