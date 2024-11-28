@@ -46,12 +46,15 @@ params:
       url: 'https://www.linkedin.com/in/maciej-gomolka/'
     - name: x
       url: 'https://twitter.com/gomolka_maciej'
-    - name: github
-      url: 'https://github.com/Zaprogramiacz'
+    - name: bluesky
+      url: 'https://bsky.app/profile/maciejgomolka.bsky.social'
     - name: mastodon
       url: 'https://mastodon.social/@gomolka'
+    - name: github
+      url: 'https://github.com/Zaprogramiacz'
     - name: email
       url: 'mailto:maciej.gomolka@protonmail.com'
+
 
   homeInfoParams:
     Title: 'Hello there 👋🏻'
