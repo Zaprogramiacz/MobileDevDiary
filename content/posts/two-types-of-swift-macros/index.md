@@ -32,15 +32,10 @@ Example of freestanding macro ⤵️
 }
 ```
 
+
 Bonus:
-It’s possible to expand macros (especially the ones defined by you) and check what’s the implementation inside. ⤵️
+It’s possible to expand macros, especially those defined by you, and check their implementation by right-clicking on a macro and selecting the "Expand Macro" option. ⤵️
 
 ![Expanded_macro](images/expand_macro.gif)
 
----
-
-Thanks for reading. 📖
-
-I hope you found it useful!
-
-If you enjoy the topic don't forget to follow me on one of my social media - [LinkedIn](https://www.linkedin.com/in/maciej-gomolka/), [X](https://twitter.com/gomolka_maciej) or via [RSS](https://www.mobiledevdiary.com/index.xml) feed to keep up to speed. 🚀
+{{< footer >}}

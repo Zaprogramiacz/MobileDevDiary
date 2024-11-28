@@ -360,10 +360,4 @@ The app is not complete, so stay tuned as there's more to come! I'm gonna be sha
 - ViewInspector: https://github.com/nalexn/ViewInspector
 - Joke API: https://github.com/15Dkatz/official_joke_api
 
----
-
-Thanks for reading. 📖
-
-I hope you found it useful!
-
-If you enjoy the topic don't forget to follow me on one of my social media - [LinkedIn](https://www.linkedin.com/in/maciej-gomolka/), [X](https://twitter.com/gomolka_maciej) or via [RSS](https://www.mobiledevdiary.com/index.xml) feed to keep up to speed. 🚀
+{{< footer >}}

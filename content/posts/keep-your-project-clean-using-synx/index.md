@@ -67,10 +67,4 @@ After going through all the conflicts save a file and run synx. Based on an outp
 
 **The tool is not designed for resolving conflicts in the way described here, so it’s likely that it won’t always be possible to solve super complex conflicts by using it.**
 
----
-
-Thanks for reading the first post on my blog. 📖
-
-I hope you found it useful!
-
-If you enjoy the topic don't forget to follow me on one of my social media - [LinkedIn](https://www.linkedin.com/in/maciej-gomolka/), [X](https://twitter.com/gomolka_maciej) or via [RSS](https://www.mobiledevdiary.com/index.xml) feed to keep up to speed. 🚀
+{{< footer >}}

@@ -523,10 +523,4 @@ In the next blog post we're going to unpack even more interesting topic 🫢 - I
 - Snapshot testing library: https://github.com/pointfreeco/swift-snapshot-testing
 - Joke API: https://github.com/15Dkatz/official_joke_api
 
----
-
-Thanks for reading. 📖
-
-I hope you found it useful!
-
-If you enjoy the topic don't forget to follow me on one of my social media - [LinkedIn](https://www.linkedin.com/in/maciej-gomolka/), [X](https://twitter.com/gomolka_maciej) or via [RSS](https://www.mobiledevdiary.com/index.xml) feed to keep up to speed. 🚀
+{{< footer >}}

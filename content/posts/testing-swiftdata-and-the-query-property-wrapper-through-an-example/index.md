@@ -305,10 +305,4 @@ Nevertheless, it would be beneficial to see further advancements in the developm
 - SwiftData docs — https://developer.apple.com/xcode/swiftdata/
 - Meet SwiftData — https://developer.apple.com/videos/play/wwdc2023/10187/
 
----
-
-Thanks for reading the first post on my blog. 📖
-
-I hope you found it useful!
-
-If you enjoy the topic don't forget to follow me on one of my social media - [LinkedIn](https://www.linkedin.com/in/maciej-gomolka/), [X](https://twitter.com/gomolka_maciej) or via [RSS](https://www.mobiledevdiary.com/index.xml) feed to keep up to speed. 🚀
+{{< footer >}}

@@ -268,10 +268,4 @@ Using `map + switchToLatest` may help you with reducing API operations when the 
 - `flatMap`, `map + switchToLatest` do not ignore errors. In case any publisher fails it'll end the mainstream and no more events will be published. To make sure it does not happen to you, remember about error handling.
 - When a stream is cancelled no more events will be published (including completion).
 
----
-
-Thanks for reading the first post on my blog. 📖
-
-I hope you found it useful!
-
-If you enjoy the topic don't forget to follow me on one of my social media - [LinkedIn](https://www.linkedin.com/in/maciej-gomolka/), [X](https://twitter.com/gomolka_maciej) or via [RSS](https://www.mobiledevdiary.com/index.xml) feed to keep up to speed. 🚀
+{{< footer >}}
