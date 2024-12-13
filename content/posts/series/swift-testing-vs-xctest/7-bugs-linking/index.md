@@ -1,11 +1,11 @@
 ---
-title: '#7 XCTest vs Swift Testing: Bugs - A modern way of linking bugs'
+title: '#7 XCTest vs Swift Testing: A modern way of linking bugs'
 date: 2024-12-13
 tags: ['Swift', 'XCTest', 'Swift Testing', 'unit testing', 'Testing']
 series: "XCTest vs. Swift Testing"
 cover: 
   image: 'images/cover.png'
-  alt: '#7 XCTest vs Swift Testing: Bugs - A modern way of linking bugs'
+  alt: '#7 XCTest vs Swift Testing: A modern way of linking bugs'
 ---
 
 ### What’s the difference?
