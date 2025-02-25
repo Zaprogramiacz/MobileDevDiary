@@ -10,6 +10,7 @@ buildExpired: false
 
 minify:
   disableXML: true
+  disableHTML: true
 
 outputs:
   home:
