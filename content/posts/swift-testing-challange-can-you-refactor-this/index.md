@@ -36,6 +36,6 @@ So, what are the benefits of using parameterised tests over non-parameterised on
 ## Final Advice 🧐
 When you find yourself repeating the same scenario with different inputs and expected outputs, always use parameterised tests. Try to look these patterns in your code and refactor using parametrised tests!
 
-![animated_refactor](images/animated_refactor.png)
+![animated_refactor](images/animated_refactor.gif)
 
 {{< footer >}}
