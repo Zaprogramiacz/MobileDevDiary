@@ -7,12 +7,9 @@ cover:
   alt: 'Turning Singleton Usage into Testable Code'
 ---
 
-Turning Singleton Usage into Testable Code
-
-
 See how you can wrap any singleton behind a protocol to make it injectable and your code fully testable 💯
 
-The below's carousel shows how to deal with URLSession.shared usage.
+The blog post shows how to deal with URLSession.shared usage.
 
 The same strategy can be applied to all other singletons in your code!
 
